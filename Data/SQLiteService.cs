@@ -26,16 +26,8 @@ namespace BlazorSQL.Data
         private static SqliteConnection GetConnection()
         {
             using var connection = new SqliteConnection("Data Source=db.sqlite");
-            try
-            {
-                connection.Open();
-
-            }
-            catch
-            {
-                throw new Exception("Bad SQLite connection");
-            }
-
+            try { connection.Open(); }
+            catch { throw new Exception("Bad SQLite connection"); }
             return connection;
         }
 
@@ -55,7 +47,6 @@ namespace BlazorSQL.Data
         {
 
             var connection = GetConnection();
-            // new SqliteConnection("Data Source=G:\\Github\\BlazorSQL\\Data\\db.sqlite");
             connection.Open();
 
             var cursor = new SqliteCommand("", connection);
