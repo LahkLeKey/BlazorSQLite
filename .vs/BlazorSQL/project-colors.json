@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f23aaf93-ae10-4bad-aa4f-1e0beb1991c3": {
+      "ProjectGuid": "f23aaf93-ae10-4bad-aa4f-1e0beb1991c3",
+      "DisplayName": "BlazorSQL",
+      "ColorIndex": 0
+    },
+    "9aa33e30-efb7-4e4a-b55b-ceb13abc2208": {
+      "ProjectGuid": "9aa33e30-efb7-4e4a-b55b-ceb13abc2208",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

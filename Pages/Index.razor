@@ -1,0 +1,27 @@
+﻿@page "/"
+
+@using BlazorSQL.Data
+@inject SQLiteService SQLite
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+<h2>@SQLite.SQLiteServiceTest()</h2>
+<div>@SQLite.GetVersion()</div>
+<div>testConnection : @testConnection()</div>
+@*<div>@SQLite.rawQuery("SELECT name FROM sqlite_schema ")</div>*@
+@*<div>@SQLite.rawQuery("SELECT * FROM Logs WHERE UserUUID = \"31fb866b-6c92-4af6-a597-ce88306cd4ac\"")</div>*@
+
+@code {
+    public string testConnection()
+    {
+        //Console.WriteLine("abcd");
+        //Console.WriteLine(SQLite.rawQuery("SELECT name FROM sqlite_schema"));
+        var cursor = SQLite.GetCursor();
+        cursor.CommandText = "SELECT * FROM LOGS";
+        Console.WriteLine(cursor.ExecuteScalar());
+        //Console.WriteLine(cursor.ExecuteScalar());
+
+        return SQLite.GetVersion();
+    }
+}
